@@ -1,0 +1,274 @@
+$color-2: #D4D4D4;
+$color-3: #a0a0a0;
+$color-4: #8C8989;
+
+
+.site-name{
+	font-size: 35px;
+	font-family: 'Fredoka One', cursive;
+	color:white;
+	position: fixed;
+
+	.small{
+		color: #a7ceb4;
+	}
+}
+
+
+header {
+	height: auto;
+	width: 100%;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	//background-image: url('/public/images/backgrounds/lodyas.png');
+	background-image: url('/public/images/backgrounds/pat');
+	background-size: cover;
+
+
+
+	// .upper,.bottom,.middle{
+	// 	border-bottom: 1px solid grey;
+	// }
+
+	
+	.download-instructions{
+		max-width: 350px;
+		width: auto !important;
+		font-size: .9em;
+		color: $color-3;
+		color: #c6c6c6;
+		margin: 0px;
+		padding: 10px;
+	//	background-color: rgba(0,0,0,.2);
+		border-radius: 4px;
+
+		ol li {
+			font-size: .9em;
+		}
+
+		ol {
+			margin-top: 4px;
+		}
+	}
+
+	.select-option{
+		border: 1px solid #c6dcff;
+		border-radius: 5px;
+	}
+
+	/* bootstrap override <a>*/
+	.link-override {
+		// color: transparent !important;
+		height: auto;
+		width: auto;
+		margin: 0px;
+	}
+
+	.col-sm-4{
+		padding: 0px!important;
+		margin: 0px;
+	}
+
+	$option-height: 60px;
+	$option-width: 180px;
+	$option-left-side-width: 60px;
+	$option-right-side-width: $option-width - $option-left-side-width;
+
+	.option{
+		height: $option-height;
+		width: auto;
+		
+
+
+	//	border: 1px solid red;
+
+		> .inner{
+
+			.left {
+				width: $option-left-side-width;
+				height: $option-height;
+				text-align: center;
+				// border: 1px solid red;
+				float: left;
+
+				.option-image{
+					font-size: 40px;
+					line-height: inherit;
+				}
+
+				.glyphicon-search{
+					color: #e2d0d0;
+				}
+
+			}
+
+			.right{
+				height: $option-height;
+				width: $option-right-side-width - 2px;
+				float: left;
+				//border: 1px solid red;
+
+				.info {
+					height: $option-height;
+					width: $option-right-side-width;
+					padding: 0px;
+					margin: 0px;
+				//	border: 1px solid yellow;
+					vertical-align: middle;
+					top: 0px;
+
+					.selected-option{
+						color: #82d9ff;
+					}
+					.unselected-option{
+						color: #a5a9b7;
+					}
+
+					.name{
+						font-size: 1.5em;
+						top: 0px;
+						width:  inherit;
+						height: auto;
+						list-style: none;
+					}
+			
+					.desc{
+						top: 0px;
+						width: inherit;
+						height: auto; 
+						font-size: .7em;
+						color: $color-3;
+						list-style: none;
+					}
+				}
+			}
+		}
+
+		
+	}
+
+	
+
+	.outer {
+		top: 0px;
+		height: inherit;
+		width: 100%;
+		background-color: rgba(0,0,0,.6);
+		padding: 20px;
+	
+
+		$upperHeight: auto;
+		$middleHeight: auto;
+		$bottomHeight: auto;
+		.upper {
+			height: $upperHeight;
+			//border: 1px solid black;
+		}
+
+		.middle {
+			height: $middleHeight;
+
+			.col-sm-3{
+				padding: 0px;
+			}
+			
+			.label{
+				
+				color: $color-2;
+				font-size: 15px;
+				text-align: center;
+				height: 40px !important;
+				line-height: 40px;
+				padding: 0px !important;
+			}
+
+			.search-in{
+				display: block;
+			}
+
+
+			.search-bar-size{
+				height: 20px;
+				margin: 0px;
+			}
+
+			#search_in{
+				background-color: #efeaea;
+			}
+
+			.submit{
+				padding: 0px;
+				margin: 0px;
+				height: 35px;
+				width: 100px;
+				border: none;
+			}
+		}
+
+		.bottom {
+			height: $bottomHeight;
+			padding-bottom: 50px;
+			
+
+
+			.checkbox{
+				color: $color-3;
+			}
+
+			.check-box-text{
+				color: $color-3;
+
+				p {
+					//margin-top: 22px;
+					color: $color-3;
+					font-size: 11px;
+				}
+
+			}
+		}
+
+		> .container-fluid{
+			height: 100%;
+		}
+
+		.list-inline li{
+			display: inline;
+			text-decoration: none;
+			list-style: none;
+		}
+	}
+
+	.border{
+		border: 1px solid white;
+	}
+
+
+	// .bootstrap-select{
+	// 	width: 90px !important;
+	// 	height: auto !important;
+	
+
+	.selectpicker{
+		text-align: center;
+		background-color: #777777;
+		border: 1px solid #9b9898;
+		color: white;
+		font-size: 12px;
+		border-radius: 0px;
+		width: 100px !important;
+		height: 23px;
+	}
+
+	#filename-edit-options{
+		color: #c6d5f2 ;
+		color: #abc6b5;
+		font-size: 12px;
+		margin: 4px;
+	}
+
+	// .center-in{
+	// 	text-align:center;
+	// 	margin:auto;
+	// }
+}

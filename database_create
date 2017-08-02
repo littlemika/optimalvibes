@@ -1,0 +1,7 @@
+
+CREATE DATABASE optimalsvibes;
+
+
+CREATE TABLE songs (id VARCHAR(20), name VARCHAR(40), artist VARCHAR(50), playlistID VARCHAR(20), filename VARCHAR(100), time INTEGER);
+
+CREATE TABLE playlists (id VARCHAR(11), filename VARCHAR(20), url VARCHAR(40), time INTEGER);

@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/bin/npm', 'run', 'build' ]
+2 info using npm@3.10.6
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+6 info lifecycle optimalvibes@1.0.0~prebuild: optimalvibes@1.0.0
+7 silly lifecycle optimalvibes@1.0.0~prebuild: no script for prebuild, continuing
+8 info lifecycle optimalvibes@1.0.0~build: optimalvibes@1.0.0
+9 verbose lifecycle optimalvibes@1.0.0~build: unsafe-perm in lifecycle true
+10 verbose lifecycle optimalvibes@1.0.0~build: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/trackfinity/mysite/node_modules/.bin:/home/trackfinity/.local/bin:/home/trackfinity/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+11 verbose lifecycle optimalvibes@1.0.0~build: CWD: /home/trackfinity/mysite
+12 silly lifecycle optimalvibes@1.0.0~build: Args: [ '-c', 'webpack --config webpack.config.js --watch --colors' ]
+13 silly lifecycle optimalvibes@1.0.0~build: Returned: code: 8  signal: null
+14 info lifecycle optimalvibes@1.0.0~build: Failed to exec build script
+15 verbose stack Error: optimalvibes@1.0.0 build: `webpack --config webpack.config.js --watch --colors`
+15 verbose stack Exit status 8
+15 verbose stack     at EventEmitter.<anonymous> (/usr/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+15 verbose stack     at EventEmitter.emit (events.js:98:17)
+15 verbose stack     at ChildProcess.<anonymous> (/usr/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+15 verbose stack     at ChildProcess.emit (events.js:98:17)
+15 verbose stack     at maybeClose (child_process.js:766:16)
+15 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:833:5)
+16 verbose pkgid optimalvibes@1.0.0
+17 verbose cwd /home/trackfinity/mysite
+18 error Linux 4.4.0-83-generic
+19 error argv "node" "/usr/bin/npm" "run" "build"
+20 error node v0.10.37
+21 error npm  v3.10.6
+22 error code ELIFECYCLE
+23 error optimalvibes@1.0.0 build: `webpack --config webpack.config.js --watch --colors`
+23 error Exit status 8
+24 error Failed at the optimalvibes@1.0.0 build script 'webpack --config webpack.config.js --watch --colors'.
+24 error Make sure you have the latest version of node.js and npm installed.
+24 error If you do, this is most likely a problem with the optimalvibes package,
+24 error not with npm itself.
+24 error Tell the author that this fails on your system:
+24 error     webpack --config webpack.config.js --watch --colors
+24 error You can get information on how to open an issue for this project with:
+24 error     npm bugs optimalvibes
+24 error Or if that isn't available, you can get their info via:
+24 error     npm owner ls optimalvibes
+24 error There is likely additional logging output above.
+25 verbose exit [ 1, true ]

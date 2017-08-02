@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Optimal Vibes</title>
+	<link href="/public/styles/css/bundled.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/public/packages/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Arsenal" rel="stylesheet">
+  <!--   <meta property="spotify_auth_url" content="{{spotify_auth_url}}"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    hello world
+  	<div id="mount"></div>
+
+
+  	<!-- handle downloading spotify playlist -->
+  	{% if downloading %}
+  	<div id="loading">
+	  	<br/><br/>
+	  	<img src="/public/images/icons/loading-4.gif" class="center-content-h" alt="loading"/>
+	  	<h4 align="center">Processing: Please Wait</h4>
+	</div>
+	<a href="{{grab_track_url}}" id="download"  download>
+		<p>Download your tracks
+			<button type="button" class="btn btn-default">
+				<span class="glyphicon glyphicon-download-alt"></span>
+			</button>
+		</p>
+	</a>
+
+	<a href="/"></a>
+  	{% endif %}
+
+
+	<script src="/public/packages/jquery-3.1.1.js"></script>
+<!--  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+	<script src="/public/packages/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<script src="/public/js/bundle.js"></script>
+
+	<!-- after spotify authorization takes place, user will be redirected here and their donwload request will be processed s-->
+	{% if downloading %}
+		<script>
+			$(document).ready(function(){
+				$('#download').hide();
+
+
+				var access_token = "{{access_token}}";
+				var spotify_uri = "{{spotify_uri}}";
+
+				$.ajax({
+					url: '/download',
+					dataType: 'json',
+					contentType: 'application/json',
+					async: true,
+					data: JSON.stringify({
+						token: access_token,
+						url: spotify_uri,
+						download_type: 'spotify'
+					}),
+					method: 'POST',
+					// contentType: 'application/json',
+			   		beforeSend: function() {
+						$('#loading').show();
+				    },
+					success: function(data){
+						console.log(data);
+					},
+					complete: function() {
+				       $('#loading').hide();
+				       $('#download').show();
+
+				    },
+					error: function(request, status, error){
+						alert(error);
+						alert(status);
+					}
+				});
+
+
+				// $('#download').click(function(){
+				// 	filename = $('#download').attr('data-filename');
+				// 	alert(download);
+
+				// 	$.ajax({
+				// 		url: '/download/grab',
+				// 		data: {filename:filename},
+				// 		method: 'GET',
+				// 		success: function(data){
+				// 			console.log(data);
+				// 		},
+				// 		error: function(request, status, error){
+				// 			alert(error);
+				// 			alert(status);
+				// 		}
+
+				// 	});
+				// });
+
+
+			});
+		</script>
+	{% endif %}
+
+
+
+</body>
+</html>

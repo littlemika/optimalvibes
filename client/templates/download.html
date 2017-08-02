@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Optimal Vibes</title>
+	<link href="/public/styles/css/bundled.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/public/packages/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Arsenal" rel="stylesheet">
+  <!--   <meta property="spotify_auth_url" content="{{spotify_auth_url}}"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="spotify_tracks" content="{{tracks}}"/>
+</head>
+<body>
+  	{{ tracks }}
+
+	<script src="/public/packages/jquery-3.1.1.js"></script>
+<!--  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+	<script src="/public/packages/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<!-- <script src="/public/js/bundle.js"></script> -->
+
+	<script>
+		$(document).ready(function(){
+			var tracks = $('meta[property=spotify_tracks]').attr("content");
+			tracks_json = JSON.parse(tracks);
+
+			$.ajax({
+				url: '/spotify',
+				dataType: 'json',
+				data: JSON.stringify(tracks_json),
+				method: 'POST',
+				contentType: 'application/json',
+				success: function(data){
+					alert(data[0]);
+					alert(data[0].artist);
+				},
+				error: function(request, status, error){
+					alert('error');
+					alert(error);
+					alert(status);
+				}
+			});
+
+			
+
+		});
+	</script>
+</body>
+</html>

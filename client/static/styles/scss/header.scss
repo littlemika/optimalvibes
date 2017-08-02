@@ -1,0 +1,297 @@
+
+$color-2: #D4D4D4;
+$color-3: #a0a0a0;
+$color-4: #8C8989;
+
+$first-row-in-header-height : 70px;
+
+
+.site-name{
+    font-size: 35px;
+    font-family: 'Fredoka One', cursive;
+    color:white;
+    position: fixed;
+    height: $first-row-in-header-height;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    .small{
+        color: #a7ceb4;
+    }
+}
+
+
+.err-msg{
+    color: #ff3d3d;
+    font-size: .8em;
+}
+ 
+.header {
+    position: fixed;
+    clear: both;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #cc5350;
+    color:#fff;
+    z-index: 1000;
+    height: $header-height; // set in bundled.scss
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    text-align:center;
+// line-height:160px;
+    background-image: url('/public/images/backgrounds/pat');
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+
+
+    .popover {
+        background-color: rgba(0,0,0,.9);
+        border-radius: 0px;
+        height: auto !important;
+        word-wrap: break-word;
+        padding: 10px !important;
+        margin: 0px !important;
+    }
+    .popover-title {
+        position: relative;
+        color: #ddd9d9;
+        font-size: 15px;
+        border: none;
+    }
+    .popover-content {
+        position: relative;
+        color: #c4c4c4;
+        font-size: 12px;
+        word-wrap: break-word;
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+
+    .container:first-child {
+        background-color: rgba(0,0,0,.5);
+        height: inherit;
+        width: 100%;
+        margin: 0px;
+
+        $upperHeight: auto;
+        $middleHeight: auto;
+        $bottomHeight: auto;
+        .upper {
+            height: $upperHeight;
+            //border: 1px solid black;
+        }
+
+        .middle {
+            height: $middleHeight;
+
+            .col-sm-3{
+                padding: 0px;
+            }
+            
+            .label{
+                
+                color: $color-2;
+                font-size: 15px;
+                text-align: center;
+                height: 40px !important;
+                line-height: 40px;
+                padding: 0px !important;
+            }
+
+            .search-in{
+                display: block;
+            }
+
+
+            .search-bar-size{
+                height: 20px;
+                margin: 0px;
+            }
+
+            #search_in{
+                background-color: #efeaea;
+            }
+
+            .submit{
+                padding: 0px;
+                margin: 0px;
+                height: 35px;
+                width: 100px;
+                border: none;
+            }
+        }
+
+        .bottom {
+            height: $bottomHeight;
+            padding-bottom: 50px;
+            
+
+
+            .checkbox{
+                color: $color-3;
+            }
+
+            .check-box-text{
+                color: $color-3;
+
+                p {
+                    //margin-top: 22px;
+                    color: $color-3;
+                    font-size: 11px;
+                }
+
+            }
+        }
+
+    }
+
+ 
+
+    .select-option{
+        border: 1px solid #c6dcff;
+        border-radius: 5px;
+    }
+
+    /* bootstrap override <a>*/
+    .link-override {
+        // color: transparent !important;
+        height: auto;
+        width: auto;
+        margin: 0px;
+       
+    }
+
+    .col-sm-4{
+        padding: 0px!important;
+        margin: 0px;
+    }
+
+    $option-height: 60px;
+    $option-width: 180px;
+    $option-left-side-width: 60px;
+    $option-right-side-width: $option-width - $option-left-side-width;
+
+    .option{
+        height: $option-height;
+        // width: auto;
+      //  width: 200px;
+        margin-left: 20px;
+        position: relative;
+        display: block;
+    //  border: 1px solid red;
+
+        > .inner{
+
+        
+
+            .left {
+                width: $option-left-side-width;
+                height: $option-height;
+                text-align: center;
+                // border: 1px solid red;
+                float: left;
+
+                .option-image{
+                    font-size: 40px;
+                    line-height: inherit;
+                }
+
+                .glyphicon-search{
+                    color: #e2d0d0;
+                }
+
+            }
+
+            .right{
+                height: $option-height;
+                width: $option-right-side-width - 2px;
+                float: left;
+                //border: 1px solid red;
+
+                .info {
+                    height: $option-height;
+                    width: $option-right-side-width;
+                    padding: 0px;
+                    margin: 0px;
+                //  border: 1px solid yellow;
+                    vertical-align: middle;
+                    top: 0px;
+
+                    .selected-option{
+                        color: #82d9ff;
+                    }
+                    .unselected-option{
+                        color: #a5a9b7;
+                    }
+
+                    .name{
+                        font-size: 1.5em;
+                        top: 0px;
+                        width:  inherit;
+                        height: auto;
+                        list-style: none;
+                    }
+            
+                    .desc{
+                        top: 0px;
+                        width: inherit;
+                        height: auto; 
+                        font-size: .7em;
+                        color: $color-3;
+                        list-style: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.selectpicker{
+    text-align: center;
+    background-color: #777777;
+    border: 1px solid #9b9898;
+    color: white;
+    font-size: 12px;
+    border-radius: 0px;
+    width: 100px !important;
+    height: 23px;
+}
+
+
+
+
+.header.shrink {
+    height: $first-row-in-header-height;
+   // line-height:80px;
+}
+.header h1
+{
+    //font-size:30px;
+    font-weight:normal;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    transition: all 0.7s;
+}
+
+.header.shrink h1
+{
+   // font-size:24px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.header.shrink .upper, .header.shrink .middle, .header.shrink .bottom
+{
+    font-size:24px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+

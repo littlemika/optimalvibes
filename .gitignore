@@ -1,0 +1,11 @@
+*.pyc
+bin
+etc
+lib
+lib64
+share
+node_modules
+globals.py
+requirements.txt
+finished_spotify_uris
+include

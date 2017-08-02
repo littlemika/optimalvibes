@@ -1,0 +1,28 @@
+  	{% if playlist is defined %}
+  	<div class="container" id="tracks">
+  		<div className="row">
+			<div className="col-sm-offset-2 col-sm-8">
+				<table class="table center-content-h">
+					<thead>
+				      <tr>
+				        <th>ARTIST</th>
+				        <th>TRACK</th>
+				        <th>LENGTH</th>
+				        <th>DOWNLOAD</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				    	{% for dict in playlist %}
+				    		<tr>
+						        <td class="col-md-4">{{ dict.artist }}</td>
+						        <td class="col-md-4">{{ dict.song }}</td>
+						        <td class="col-md-2">{{ dict.duration_ms }}</td>
+						        <td class="glyphicon-container col-md-2"><span class="glyphicon glyphicon-download-alt" id={this.props.id}></span></td>
+						      </tr>
+				    	{% endfor %}
+				    </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	{% endif %}

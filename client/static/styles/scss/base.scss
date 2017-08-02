@@ -1,0 +1,108 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+body{
+	font-size: 14px;
+	margin: 0px;
+  font-family: 'Arsenal', sans-serif;
+  height: auto;
+  min-height: 1500px;
+}
+
+
+.center-content-h {
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
+
+
+ .center-content-v {
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.highlight{
+
+ // word-wrap: break-word;
+ color: #e5e9ea;
+   font-weight: 700;
+}
+
+#loading{
+  visibility: hidden;
+
+  img{
+    position: relative; 
+    display:block;
+    margin:0px;
+    height: 90px;
+    width: 90px;
+  }
+  
+}
+
+#processing_results {
+  list-style-type: none;
+  font-size: 30px;
+
+  li{
+     display:inline;
+  }
+
+  .dot{
+     color: transparent;
+  }
+
+
+}
+
+  .solid-dot {
+    color: black !important;
+    background-color: yellow;
+  }
+
+
+//  tr, td,th, table{border: 1px solid black;}
+
+#tracks {
+  width: 100%;
+}
+#tracks table {
+  text-align: center;
+  height: auto;
+  width: auto!important;
+  top: 0px;
+
+  th {
+    text-align: center !important;
+    background-color: #EBEBEB;
+  }
+
+  td {
+    width: 200px;
+  }
+
+  .borderless td, .borderless th {
+        border-top: none !important;
+        border-left: none !important;
+        border: none !important;
+        width: 25%;
+
+  }
+
+  .glyphicon-container {
+    text-align: center;
+  }
+
+  .glyphicon-download-alt {
+
+  }
+}
+
+
+#download{
+
+}
