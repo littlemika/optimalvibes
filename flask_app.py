@@ -3,6 +3,7 @@
 
 from flask import Flask, render_template, request, jsonify, send_from_directory, url_for, redirect, send_from_directory
 
+import unicodedata
 import urllib
 import base64
 import requests
@@ -260,8 +261,8 @@ def getSpotifyPlaylistTracks(spotify_uri,token):
 		'filename' : playlist_filename,
 		'pid' : pid,
 		'statusObject' : statusObject,
-		'tracks': tracks
-
+		'tracks': tracks,
+		'download': True
 	}
 
 
@@ -275,6 +276,10 @@ def songDownloadPipeline(track):
     url = track['url']
     artist = track['artist']
     song = track['song']
+    song = unicodedata.normalize('NFKD', song).encode('ascii','ignore')
+    artist = unicodedata.normalize('NFKD', artist).encode('ascii','ignore')
+
+
     duration_ms = track['duration_ms']
     filename = track['filename']
 

@@ -7,9 +7,7 @@ import SearchBar from './search-bar.jsx';
 export default class SpotifyPlaylist extends React.Component{
 
 	render() {
-		return(
-
-			{/*
+		return(			
 			<p className="download-instructions center-content-h">
 				<span>Copy and paste the spotify uri into the search input.</span>
 				<ol>
@@ -20,7 +18,7 @@ export default class SpotifyPlaylist extends React.Component{
 				<span className="highlight">Example: </span>
 				<i>spotify:user:1212962782:playlist:0dnfOzFamuV4VvRFgJqUeD</i>
 			</p>
-			*/}
+			
 		);
 	}
 }

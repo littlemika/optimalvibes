@@ -323,8 +323,7 @@ export default class Header extends React.Component {
 	
 		return (
 			<Router>
-			
-				<div className="header" id="header">
+				<div className="header">
 					<div className="container">
 						{/* START row upper */}	
 						<div className="row upper">
@@ -359,7 +358,6 @@ export default class Header extends React.Component {
 												</div>
 											)
 										})
-
 									}
 
 								</div>
@@ -394,12 +392,17 @@ export default class Header extends React.Component {
 						</div>
 						{/* END row middle */}			
 						{/* START row bottom */}
+
 						<br/>
+
+
+						{/*
 						<div className="row bottom" id="bottom-header">
 							<Route exact path="/" component={SearchSong}/>
-							<Route path="/spotify" component={SpotifyPlaylist}/>
 							<Route path="/youtube" component={YoutubePlaylist}/>					
 						</div>
+						*/}
+
 						{/* END row bottom */}
 					</div>
 				</div>

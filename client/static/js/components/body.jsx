@@ -18,20 +18,33 @@ export default class Body extends React.Component {
 
 	componentDidMount(){
 	//	document.getElementById('#body').scrollTop += 20;
+		var grabTrackURL = $('meta[name=grabTrackURL]').attr("content");
+		var isDownloading = $('meta[name=isDownloading]').attr("content");
+		console.log('get_data_url => ' +  grabTrackURL);
+		console.log('isDownloading => ' + isDownloading);
 	}
 
 	render() {
 		return (
 			<div className="container" id="body">
-				<Router>
+			     {/* <Router>  */}
 					<div className="row">
 						<div className="col-sm-offset-2 col-sm-8">
+							Loading right here
 							<div id="loading">
 							  	<br/><br/>
 							  	<img src="/public/images/icons/loading-4.gif" className="center-content-h" alt="loading"/>
 							  	<h4 className="center-content-h">Processing: Please Wait</h4>
 							</div>
-						
+							 <a href="{{grab_track_url}}" id="download"  download>
+                						<p>Download your tracks
+                        						<button type="button" className="btn btn-default">
+                                						<span class="glyphicon glyphicon-download-alt"></span>
+                        						</button>
+               							 </p>
+        						</a>
+	
+	
 						{/*
 							<Route exact path="/" component={TrackList}/>
 							<Route path="/spotify" component={TrackList}/>
@@ -39,7 +52,7 @@ export default class Body extends React.Component {
 						*/}
 						</div>
 					</div>
-				</Router>
+			{/*	</Router>   */}
 				
 			</div>
 		);

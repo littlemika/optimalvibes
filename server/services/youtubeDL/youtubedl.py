@@ -17,6 +17,8 @@ from globals import Globals
 from status import Status
 from models.songs import SongModel
 
+import unicodedata
+
 class YoutubeDLInterface(object):
 
 
@@ -88,12 +90,18 @@ class YoutubeDLInterface(object):
 
 		if filename is None or filename is '':
 			print('filename is None ==============')
-			cmd = '{} --verbose --audio-quality 0 --extract-audio  --audio-format mp3 {} -q {} -o "{}/%(title)s.%(ext)s";'.format(Globals.YTDL_BINARY_PATH, ''.join(ytdl_cmd_args), URL, Globals.DOWNLOAD_PATH)
+			cmd = '{} --prefer-ffmpeg   --verbose --audio-quality 0 --extract-audio  --audio-format mp3 {} -q {} -o "{}/%(title)s.%(ext)s";'.format(Globals.YTDL_BINARY_PATH, ''.join(ytdl_cmd_args), URL, Globals.DOWNLOAD_PATH)
 		else:
 			print('filename is not None ===============')
-			cmd = '{} --verbose  --audio-quality 0 --extract-audio --audio-format mp3 {} -q {} -o "{}/{}.%(ext)s";'.format(Globals.YTDL_BINARY_PATH, ''.join(ytdl_cmd_args), URL, Globals.DOWNLOAD_PATH, filename)
+			print(filename)
+			cmd = '{} --prefer-ffmpeg  --verbose  --audio-quality 0 --extract-audio --audio-format mp3 {} -q {} -o "{}/{}.%(ext)s";'.format(Globals.YTDL_BINARY_PATH, ''.join(ytdl_cmd_args), URL, Globals.DOWNLOAD_PATH, filename)
 
 
+
+
+
+		print('cmd:')
+		print(cmd)		
 
 		try:
 		    print('Attempting to download ...' + cmd)
@@ -143,13 +151,24 @@ class YoutubeDLInterface(object):
 
 	def formatSongFilename(self, artist, song, filename=None):
 
-		if filename is None:
-			filename = '{} - {}'.format(artist, song)
+		if artist is None:
+			artist = 'none'
+	
+		if song is None:
+			song = 'none'
+
+
+		print('156: youtubedl.py => filename before unicode => ' + song + ' ' + artist + '.mp3')
+		
+#		song = unicodedata.normalize('NFKD', song).encode('ascii','ignore')
+#		artist = unicodedata.normalize('NFKD', artist).encode('ascii','ignore')
+		filename = '{} - {}'.format(artist, song)
+		print('after => ' + filename)
+		
 
 		filename = filename.replace('$','S')		# these characters cannot be included in a filename
-		
-		filename = filename.replace('(','{')
-        	filename = filename.replace(')','}')
+		filename = filename.replace('{','(')
+        	filename = filename.replace('}',')')
 		filename = filename.replace("'","\'")
 		return filename
 

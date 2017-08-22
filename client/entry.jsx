@@ -27,9 +27,3 @@ ReactDOM.render(<Base/>, mount);
 
 
 	
-		// 	<div>
-		// 		<Header subtitle=daniel hui"/>
-		// 		<Body />
-		// 		<h1>{name} {this.getWorld()}</h1>
-		// 	</div>
-		// 

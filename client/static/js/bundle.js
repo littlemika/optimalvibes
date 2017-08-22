@@ -10307,6 +10307,10 @@ var Body = function (_React$Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			//	document.getElementById('#body').scrollTop += 20;
+			var grabTrackURL = $('meta[name=grabTrackURL]').attr("content");
+			var isDownloading = $('meta[name=isDownloading]').attr("content");
+			console.log('get_data_url => ' + grabTrackURL);
+			console.log('isDownloading => ' + isDownloading);
 		}
 	}, {
 		key: 'render',
@@ -10315,24 +10319,35 @@ var Body = function (_React$Component) {
 				'div',
 				{ className: 'container', id: 'body' },
 				_react2.default.createElement(
-					_reactRouterDom.BrowserRouter,
-					null,
+					'div',
+					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'row' },
+						{ className: 'col-sm-offset-2 col-sm-8' },
+						'Loading right here',
 						_react2.default.createElement(
 							'div',
-							{ className: 'col-sm-offset-2 col-sm-8' },
+							{ id: 'loading' },
+							_react2.default.createElement('br', null),
+							_react2.default.createElement('br', null),
+							_react2.default.createElement('img', { src: '/public/images/icons/loading-4.gif', className: 'center-content-h', alt: 'loading' }),
 							_react2.default.createElement(
-								'div',
-								{ id: 'loading' },
-								_react2.default.createElement('br', null),
-								_react2.default.createElement('br', null),
-								_react2.default.createElement('img', { src: '/public/images/icons/loading-4.gif', className: 'center-content-h', alt: 'loading' }),
+								'h4',
+								{ className: 'center-content-h' },
+								'Processing: Please Wait'
+							)
+						),
+						_react2.default.createElement(
+							'a',
+							{ href: '{{grab_track_url}}', id: 'download', download: true },
+							_react2.default.createElement(
+								'p',
+								null,
+								'Download your tracks',
 								_react2.default.createElement(
-									'h4',
-									{ className: 'center-content-h' },
-									'Processing: Please Wait'
+									'button',
+									{ type: 'button', className: 'btn btn-default' },
+									_react2.default.createElement('span', { 'class': 'glyphicon glyphicon-download-alt' })
 								)
 							)
 						)
@@ -10700,7 +10715,7 @@ var Header = function (_React$Component2) {
 				null,
 				_react2.default.createElement(
 					'div',
-					{ className: 'header', id: 'header' },
+					{ className: 'header' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'container' },
@@ -10812,14 +10827,7 @@ var Header = function (_React$Component2) {
 								)
 							)
 						),
-						_react2.default.createElement('br', null),
-						_react2.default.createElement(
-							'div',
-							{ className: 'row bottom', id: 'bottom-header' },
-							_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _searchSong2.default }),
-							_react2.default.createElement(_reactRouterDom.Route, { path: '/spotify', component: _spotifyPlaylist2.default }),
-							_react2.default.createElement(_reactRouterDom.Route, { path: '/youtube', component: _youtubePlaylist2.default })
-						)
+						_react2.default.createElement('br', null)
 					)
 				)
 			);
@@ -10997,18 +11005,45 @@ var SpotifyPlaylist = function (_React$Component) {
 	_createClass(SpotifyPlaylist, [{
 		key: 'render',
 		value: function render() {
-			return {/*
-           <p className="download-instructions center-content-h">
-           <span>Copy and paste the spotify uri into the search input.</span>
-           <ol>
-           	<li>Right click a playlist in spotify</li>
-           	<li>Select <i>Copy Spotify URI</i></li>
-           </ol>
-           <br/>
-           <span className="highlight">Example: </span>
-           <i>spotify:user:1212962782:playlist:0dnfOzFamuV4VvRFgJqUeD</i>
-           </p>
-           */};
+			return _react2.default.createElement(
+				'p',
+				{ className: 'download-instructions center-content-h' },
+				_react2.default.createElement(
+					'span',
+					null,
+					'Copy and paste the spotify uri into the search input.'
+				),
+				_react2.default.createElement(
+					'ol',
+					null,
+					_react2.default.createElement(
+						'li',
+						null,
+						'Right click a playlist in spotify'
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						'Select ',
+						_react2.default.createElement(
+							'i',
+							null,
+							'Copy Spotify URI'
+						)
+					)
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'span',
+					{ className: 'highlight' },
+					'Example: '
+				),
+				_react2.default.createElement(
+					'i',
+					null,
+					'spotify:user:1212962782:playlist:0dnfOzFamuV4VvRFgJqUeD'
+				)
+			);
 		}
 	}]);
 
@@ -25821,13 +25856,6 @@ exports.default = Base;
 
 var mount = document.getElementById('mount');
 _reactDom2.default.render(_react2.default.createElement(Base, null), mount);
-
-// 	<div>
-// 		<Header subtitle=daniel hui"/>
-// 		<Body />
-// 		<h1>{name} {this.getWorld()}</h1>
-// 	</div>
-//
 
 /***/ })
 /******/ ]);
