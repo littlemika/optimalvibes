@@ -1,5 +1,11 @@
-from apiclient.discovery import build
-from apiclient.errors import HttpError
+#!/Users/hui/Documents/apps/optimalvibes/bin/python
+
+from googleapiclient.discovery import build
+
+#from apiclient.errors import HttpError
+
+from googleapiclient.errors import HttpError
+
 from status import Status
 # pip install --ignore-installed six --upgrade google-api-python-client
 

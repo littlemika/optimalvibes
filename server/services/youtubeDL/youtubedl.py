@@ -6,14 +6,12 @@ import sys
 import time
 import glob
 import os
-#sys.path.append('/Users/danielhui/Documents/apps/OptimalVibes/server/')
-
-cwd = os.getcwd()
-
-sys.path.append('/var/www/html/optimalvibes')
-sys.path.append('/var/www/html/optimalvibes/server')
-#sys.path.append('/Users/danielhui/Documents/apps/OptimalVibes/server')
 from globals import Globals
+
+sys.path.append(Globals.ROOT_DIR + '/server')
+
+
+
 from status import Status
 from models.songs import SongModel
 
